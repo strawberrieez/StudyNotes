@@ -14,5 +14,10 @@ class AuthProv {
       return Stream.value(null);
     },
     autoDisposeWhenNotUsed: false,
+    sideEffects: SideEffects.onData(
+      (data) async {
+        await _sv.responseAuthStates(data);
+      },
+    ),
   );
 }

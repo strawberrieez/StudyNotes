@@ -41,6 +41,15 @@ class LoginView extends StatelessWidget {
                 },
               ),
               const SizedBox(height: 25),
+              ElevatedButton(
+                onPressed: () async {
+                  _ct.signInAnonymously();
+                },
+                child: const Text(
+                  "Sign In Anonimously",
+                ),
+              ),
+              const SizedBox(height: 25),
               OnFormSubmissionBuilder(
                 listenTo: _dt.rxForm,
                 onSubmitting: () => const CircularProgressIndicator(),

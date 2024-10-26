@@ -6,4 +6,5 @@ abstract class Ctrl {
   static SampleTigaCtrl get sampleTiga => SampleTigaCtrl();
   static LoginCtrl get login => LoginCtrl();
   static RegisterCtrl get register => RegisterCtrl();
+  static HomeCtrl get home => HomeCtrl();
 }

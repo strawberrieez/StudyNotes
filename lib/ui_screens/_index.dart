@@ -6,3 +6,4 @@ export 'x.sample/c.sample_tiga/_index.dart';
 
 export 'a.login/_index.dart';
 export 'b.register/_index.dart';
+export 'c.home/_index.dart';

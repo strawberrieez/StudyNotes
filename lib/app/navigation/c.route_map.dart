@@ -9,5 +9,6 @@ class RouteMap {
     Routes.sampleTiga: (RouteData data) => const SampleTigaView(),
     Routes.login: (RouteData data) => const LoginView(),
     Routes.register: (RouteData data) => const RegisterView(),
+    Routes.home: (RouteData data) => const HomeView(),
   };
 }
