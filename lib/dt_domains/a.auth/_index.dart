@@ -1,6 +1,6 @@
-import 'dart:math';
 
 import 'package:states_rebuilder/states_rebuilder.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 import '../../app/_index.dart';
 import '../../xtras/_index.dart';

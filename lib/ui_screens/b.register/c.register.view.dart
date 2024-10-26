@@ -5,21 +5,57 @@ class RegisterView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(56),
-        child: RegisterAppbar(),
-      ),
-      floatingActionButton: RegisterFab(),
-      body: Center(
-        child: Column(
+    return Scaffold(
+      body: OnFormBuilder(
+        listenTo: _dt.rxForm,
+        builder: () => Center(
+            child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            RegisterCharlie(),
-            RegisterDelta(),
-            RegisterEcho(),
+            OnFormBuilder(
+              listenTo: _dt.rxForm,
+              builder: () => TextField(
+                controller: _dt.rxEmail.controller,
+                decoration: InputDecoration(
+                  labelText: 'input email',
+                  errorText: _dt.rxEmail.error,
+                ),
+              ),
+            ),
+            const SizedBox(height: 25),
+            OnFormBuilder(
+              listenTo: _dt.rxForm,
+              builder: () => TextField(
+                controller: _dt.rxPassword.controller,
+                decoration: InputDecoration(
+                  labelText: 'input password',
+                  errorText: _dt.rxPassword.error,
+                ),
+              ),
+            ),
+            const SizedBox(height: 25),
+            OnFormSubmissionBuilder(
+              listenTo: _dt.rxForm,
+              onSubmitting: () => const CircularProgressIndicator(),
+              child: ElevatedButton(
+                onPressed: () {
+                  _ct.submit();
+                },
+                child: const Text(
+                  "submit",
+                ),
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                nav.to(Routes.login);
+              },
+              child: const Text(
+                "Already have an account? sign in!",
+              ),
+            ),
           ],
-        ),
+        )),
       ),
     );
   }

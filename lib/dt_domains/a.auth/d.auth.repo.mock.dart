@@ -2,9 +2,33 @@ part of '_index.dart';
 
 class AuthRepoMock implements AuthRepo {
   @override
-  int giveNewRandom() {
-    final x = Random().nextInt(100);
-    logz.wtf('random value coming from AuthRepoMock');
-    return x;
+  Future<void> createAccountByEmailPassword({required email, required password}) {
+    throw UnimplementedError();
   }
+
+  @override
+  Future<void> deleteAccount() {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> signInAnonymously() {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> signInByEmailPassword({required email, required password}) {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> signInByGoogle() {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> signOut() {
+    throw UnimplementedError();
+  }
+  
 }

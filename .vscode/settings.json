@@ -21,8 +21,13 @@
     "storage.rules": true,
     "studynotes.iml": true,
     "test": true,
-    "web": true,
     "windows": true,
-    ".vscode": true
+    ".vscode": true,
+    ".fttemplates": true,
+    ".readme_template": true,
+    ".gitignore": true,
+    "lib-old": true,
+    "web": true,
+    "assets": true
   }
 }
